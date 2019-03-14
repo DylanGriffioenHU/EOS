@@ -1,0 +1,19 @@
+#!/bin/bash
+#Argument $1 is het bestand waar de inloggegevens naar toe gestuurd worden
+
+echo "Geef een username: "; read NAME
+if [[ -z $NAME ]]; then
+	NAME="whoami"
+fi
+
+echo "Geef een wachtwoord met minstens 8 karakters, een hoofdletter, een kleine letter en een cijfer."
+while read PASS && read PASS2; do
+if [ "$PASS" == "$PASS2" ] && [[ "$PASS" =~ [A-Z] ]] && [[ "$PASS" =~ [a-z] ]] && [[ "$PASS" =~ [0-9] ]] && [[ "${#PASS}" -gt 7 ]]
+then
+	echo "$NAME" >> $1
+	echo "$PASS" | md5sum >> $1
+	break 
+else
+	echo "Dit wachtwoord is niet geldig, probeer het nog een keer."
+fi
+done

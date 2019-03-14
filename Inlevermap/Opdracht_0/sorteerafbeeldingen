@@ -1,0 +1,10 @@
+#!/bin/bash
+#Argument $1 is het pad naar de map waar de bestanden staan
+
+mkdir -p $1/afbeeldingen
+
+for f in $1/*.jpeg $1/*.png
+
+do
+        mv $f $1/afbeeldingen
+done

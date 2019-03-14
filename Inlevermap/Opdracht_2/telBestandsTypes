@@ -1,0 +1,23 @@
+#!/bin/bash
+
+COUNTARG2=0
+COUNTARG3=0
+COUNTARG4=0
+
+for FILE in $1/*.pdf *.jpg *.doc; do
+	case ${FILE} in
+	$2)
+	let COUNTARG2++
+	;;
+	$3)
+	let COUNTARG3++
+	;;
+	$4)
+	let COUNTARG4++
+	;;
+	esac
+done
+
+echo "Aantal bestanden met $2 extensie: $COUNTARG2"
+echo "Aantal bestanden met $3 extensie: $COUNTARG3"
+echo "Aantal bestanden met $4 extensie: $COUNTARG4"

@@ -1,0 +1,6 @@
+#!/bin/bash
+#Argument $1 is de map waar je fotos in staan
+
+for FILE in $1/*.jpeg; do
+	convert $FILE -resize 128x128 ${FILE%.*}.png
+done

@@ -1,0 +1,5 @@
+#!/bin/bash
+#Argument $1 is het pad naar de map waar de bestanden staan
+
+mkdir -p $1/vakantie
+mv `find $1/*.jpeg $1/*.png|grep Vakantiefoto` $1/vakantie 

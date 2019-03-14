@@ -1,0 +1,13 @@
+#!/bin/bash
+#Argument $1 is de map waar de bestanden staan
+#Argument $2 is het commando wat je uitvoert
+
+echo '' > $1/error.log
+
+for FILE in `find $1`; do
+	if $2 "$FILE" > /dev/null 2> /dev/null; then
+	  echo "$2 $FILE is gelukt." >> $1/error.log
+	else
+	  echo "$2 $FILE is NIET gelukt." >> $1/error.log
+	fi
+done

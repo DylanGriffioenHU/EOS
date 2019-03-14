@@ -1,0 +1,5 @@
+#!/bin/bash
+#Argument $1 is het pad naar de map waar de bestanden staan
+
+mkdir -p $1/afbeeldingen
+find $1/*.jpeg $1/*.png -type f -exec mv {} $1/afbeeldingen \;

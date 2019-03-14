@@ -1,0 +1,9 @@
+#!/bin/bash
+#Argument $1 is het pad naar waar de bestanden gemaakt moeten worden
+#Argument $2 is de naam van de bestanden
+#Argument $3 is hoeveel bestanden je wilt hebben
+#Argument $4 is de extensie van de bestanden
+for ((i = 0; i<$3; i++))
+do
+       touch $1/$2$i$4
+done

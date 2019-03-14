@@ -1,0 +1,11 @@
+#!/bin/bash
+#Argument $1 is het pad naar de bestanden die je wilt verdijderen
+#Argument $2 is de extesie die je wilt verwijderen
+
+for f in $1/*$2
+
+do
+       rm $f
+done
+
+
